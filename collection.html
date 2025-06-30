@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestige Jewelers | Gold & Diamond Rings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dee934d8-5283-482a-8e0a-f78ff5826d00.png') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .ring-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .ring-card:hover .ring-btn {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .ring-btn {
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .price-tag {
+            background: rgba(255, 215, 0, 0.15);
+            border-left: 3px solid #FFD700;
+        }
+        
+        .filter-btn.active {
+            background-color: #FFD700;
+            color: #000;
+        }
+        
+        .navbar {
+            backdrop-filter: blur(8px);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 40vh;
+            }
+            
+            .ring-btn {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar bg-white/80 fixed w-full z-10 shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-800 font-serif">PRESTIGE</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">Collections</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900 font-medium text-gold-800">Rings</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">About</a>
+                <a href="#" class="text-gray-600 hover:text-gray-900">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                    <i class="fas fa-search text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                    <i class="fas fa-user text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100 relative">
+                    <i class="fas fa-shopping-bag text-gray-600"></i>
+                    <span class="absolute -top-1 -right-1 bg-gold-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">3</span>
+                </button>
+            </div>
+            <button class="md:hidden p-2">
+                <i class="fas fa-bars text-gray-600"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center justify-center mt-16">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-6xl text-white font-bold mb-4">Golden Elegance</h1>
+            <p class="text-xl text-white mb-8 font-light max-w-2xl mx-auto">Discover our exquisite collection of gold and diamond rings crafted with precision and timeless beauty</p>
+            <button class="px-8 py-3 bg-white text-gray-800 hover:bg-gray-100 transition duration-300 rounded-sm font-medium">Explore Collections</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 md:py-16">
+        <!-- Collection Info -->
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Gold & Diamond Rings</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Each piece in our collection is handcrafted by master jewelers using only ethically sourced diamonds and 18K gold.</p>
+        </div>
+        
+        <!-- Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">All</button>
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100 active">Gold</button>
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Diamond</button>
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Wedding</button>
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Engagement</button>
+            <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-gray-100">Solitaire</button>
+        </div>
+        
+        <!-- Ring Collection -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Ring 1 -->
+            <div class="ring-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                <div class="relative overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4ac3408c-6caf-4aae-a469-c10f45b0fdfd.png" alt="18K gold solitaire diamond ring on velvet display" class="w-full h-80 object-cover">
+                    <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-xs font-medium shadow-sm">New Arrival</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-1">Eternity Diamond Ring</h3>
+                    <p class="text-gray-500 text-sm mb-3">18K Yellow Gold | 0.5ct Diamond</p>
+                    <div class="price-tag px-3 py-1 rounded inline-block mb-4">
+                        <span class="font-bold text-gold-700">$1,799</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">(24)</span>
+                    </div>
+                </div>
+                <button class="ring-btn absolute bottom-4 right-4 bg-black text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-gray-800">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+            
+            <!-- Ring 2 -->
+            <div class="ring-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                <div class="relative overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/53dfa800-5093-48d0-9e2d-ac77dc45abdb.png" alt="Platinum band with channel-set diamonds reflecting light elegantly" class="w-full h-80 object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-1">Platinum Diamond Band</h3>
+                    <p class="text-gray-500 text-sm mb-3">950 Platinum | 0.75ct Diamonds</p>
+                    <div class="price-tag px-3 py-1 rounded inline-block mb-4">
+                        <span class="font-bold text-gold-700">$2,450</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">(18)</span>
+                    </div>
+                </div>
+                <button class="ring-btn absolute bottom-4 right-4 bg-black text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-gray-800">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+            
+            <!-- Ring 3 -->
+            <div class="ring-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                <div class="relative overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/25334d71-382b-4e4d-bc53-ee0473cd2065.png" alt="Rose gold vintage-inspired ring with floral diamond accents" class="w-full h-80 object-cover">
+                    <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-xs font-medium shadow-sm">Bestseller</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-1">Rose Gold Vintage</h3>
+                    <p class="text-gray-500 text-sm mb-3">18K Rose Gold | 0.4ct Diamonds</p>
+                    <div class="price-tag px-3 py-1 rounded inline-block mb-4">
+                        <span class="font-bold text-gold-700">$1,650</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">(42)</span>
+                    </div>
+                </div>
+                <button class="ring-btn absolute bottom-4 right-4 bg-black text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-gray-800">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+            
+            <!-- Ring 4 -->
+            <div class="ring-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                <div class="relative overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/06f23e9a-e33d-4c2f-99f1-85d28ed1235e.png" alt="Modern white gold engagement ring with princess-cut center diamond" class="w-full h-80 object-cover">
+                    <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-xs font-medium shadow-sm">Top Rated</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-1">Princess Cut Solitaire</h3>
+                    <p class="text-gray-500 text-sm mb-3">18K White Gold | 1.0ct Diamond</p>
+                    <div class="price-tag px-3 py-1 rounded inline-block mb-4">
+                        <span class="font-bold text-gold-700">$3,299</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">(31)</span>
+                    </div>
+                </div>
+                <button class="ring-btn absolute bottom-4 right-4 bg-black text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-gray-800">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+            
+            <!-- Ring 5 -->
+            <div class="ring-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                <div class="relative overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4132ac5d-97de-466f-951c-f4ad9b05d2cb.png" alt="Yellow gold wedding band with diamond encrusted border details" class="w-full h-80 object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-1">Classic Wedding Band</h3>
+                    <p class="text-gray-500 text-sm mb-3">18K Yellow Gold | 0.25ct Diamonds</p>
+                    <div class="price-tag px-3 py-1 rounded inline-block mb-4">
+                        <span class="font-bold text-gold-700">$999</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">(56)</span>
+                    </div>
+                </div>
+                <button class="ring-btn absolute bottom-4 right-4 bg-black text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-gray-800">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+            
+            <!-- Ring 6 -->
+            <div class="ring-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                <div class="relative overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/23e96faf-e7c5-44dc-91ed-2612a2868919.png" alt="Three-stone eternity ring with alternating diamonds and blue sapphires" class="w-full h-80 object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-1">Three-Stone Eternity</h3>
+                    <p class="text-gray-500 text-sm mb-3">18K White Gold | 0.9ct Diamonds & Sapphires</p>
+                    <div class="price-tag px-3 py-1 rounded inline-block mb-4">
+                        <span class="font-bold text-gold-700">$2,150</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">(19)</span>
+                    </div>
+                </div>
+                <button class="ring-btn absolute bottom-4 right-4 bg-black text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-gray-800">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+            
+            <!-- Ring 7 -->
+            <div class="ring-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                <div class="relative overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/77c597c6-f577-46f4-9f9c-8a7ba1b63569.png" alt="Minimalist yellow gold ring with single tiny diamond accent" class="w-full h-80 object-cover">
+                    <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white text-xs font-medium shadow-sm">Limited Edition</span>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-1">Delicate Gold Ring</h3>
+                    <p class="text-gray-500 text-sm mb-3">18K Yellow Gold | 0.1ct Diamond</p>
+                    <div class="price-tag px-3 py-1 rounded inline-block mb-4">
+                        <span class="font-bold text-gold-700">$750</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">(37)</span>
+                    </div>
+                </div>
+                <button class="ring-btn absolute bottom-4 right-4 bg-black text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-gray-800">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+            
+            <!-- Ring 8 -->
+            <div class="ring-card bg-white rounded-lg overflow-hidden shadow-md transition-all duration-300 relative">
+                <div class="relative overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d34c88c3-309a-48ee-a54d-32874e8c0c14.png" alt="Large cushion-cut diamond halo ring with intricate metalwork" class="w-full h-80 object-cover">
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold mb-1">Halo Diamond Ring</h3>
+                    <p class="text-gray-500 text-sm mb-3">18K White Gold | 1.5ct Center Diamond</p>
+                    <div class="price-tag px-3 py-1 rounded inline-block mb-4">
+                        <span class="font-bold text-gold-700">$4,999</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="text-gray-400 text-sm">(15)</span>
+                    </div>
+                </div>
+                <button class="ring-btn absolute bottom-4 right-4 bg-black text-white rounded-full h-10 w-10 flex items-center justify-center hover:bg-gray-800">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12">
+            <nav class="flex items-center gap-1">
+                <button class="px-3 py-1 rounded border border-gray-300 bg-white hover:bg-gray-50">Previous</button>
+                <button class="px-3 py-1 rounded border border-gray-300 bg-white hover:bg-gray-50 font-medium text-gold-700 border-gold-300">1</button>
+                <button class="px-3 py-1 rounded border border-gray-300 bg-white hover:bg-gray-50">2</button>
+                <button class="px-3 py-1 rounded border border-gray-300 bg-white hover:bg-gray-50">3</button>
+                <span class="px-3 py-1">...</span>
+                <button class="px-3 py-1 rounded border border-gray-300 bg-white hover:bg-gray-50">8</button>
+                <button class="px-3 py-1 rounded border border-gray-300 bg-white hover:bg-gray-50">Next</button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <section class="bg-gray-100 py-12 md:py-16 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Join Our Jewelry Community</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-8">Subscribe to receive exclusive offers, styling tips, and new collection previews.</p>
+            <form class="max-w-md mx-auto flex">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 border border-gray-300 rounded-l focus:outline-none focus:ring-2 focus:ring-gold-500">
+                <button type="submit" class="bg-black text-white px-6 py-3 rounded-r hover:bg-gray-800 transition duration-300">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white pt-12 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 font-serif">PRESTIGE</h3>
+                    <p class="text-gray-400 mb-4">Crafting timeless jewelry since 1985.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Shop</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Rings</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Necklaces</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Earrings</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Bracelets</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">About Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sustainability</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Press</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Customer Service</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Jewelry Care</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Prestige Jewelers. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Filter functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle would go here
+    </script>
+</body>
+</html>
+
